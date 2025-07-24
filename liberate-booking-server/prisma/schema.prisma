@@ -1,0 +1,32 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+
+model Booking {
+  id          String     @id @default(uuid())
+  resource  String
+ 
+  requestedBy String    
+  startTime   DateTime
+  endTime     DateTime
+  createdAt   DateTime   @default(now())
+
+  status      BookingStatus @default(UPCOMING)
+
+  @@map("bookings")
+  @@index([resource, startTime, endTime])
+}
+
+enum BookingStatus {
+  UPCOMING
+  ONGOING
+  PAST
+}
