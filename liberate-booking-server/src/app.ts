@@ -7,7 +7,7 @@ import notFound from "./app/middlewares/notFound";
 const app: Application = express();
 app.use(
   cors({
-    origin: ["http://localhost:3001", "https://liberate-booking.vercel.app"],
+    origin: ["http://localhost:3000", "https://liberate-booking.vercel.app"],
     credentials: true,
   })
 );

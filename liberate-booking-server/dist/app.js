@@ -11,7 +11,7 @@ const globalErrorHandler_1 = __importDefault(require("./app/middlewares/globalEr
 const notFound_1 = __importDefault(require("./app/middlewares/notFound"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
-    origin: ["http://localhost:3001", "https://liberate-booking.vercel.app"],
+    origin: ["http://localhost:3000", "https://liberate-booking.vercel.app"],
     credentials: true,
 }));
 app.use((0, cookie_parser_1.default)());
